@@ -13,6 +13,13 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
 </head>
 
 <body>
@@ -483,6 +490,22 @@
                             <div class="contact-icon">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
+                                        d="M17.472 14.382C17.111 14.201 15.336 13.328 15.003 13.208C14.669 13.088 14.425 13.028 14.181 13.389C13.936 13.749 13.237 14.569 13.027 14.809C12.817 15.049 12.607 15.079 12.246 14.898C11.885 14.717 10.723 14.336 9.34599 13.107C8.23699 12.117 7.48899 10.895 7.27899 10.534C7.06899 10.173 7.25699 9.98 7.43799 9.799C7.59999 9.637 7.79899 9.377 7.97899 9.166C8.15899 8.956 8.21899 8.806 8.33899 8.565C8.45899 8.325 8.39899 8.114 8.29899 7.914C8.19899 7.714 7.45899 5.89 7.14899 5.149C6.84899 4.429 6.54899 4.529 6.32899 4.529C6.11899 4.529 5.87899 4.519 5.63899 4.519C5.39899 4.519 4.99899 4.609 4.66899 4.969C4.33899 5.329 3.39899 6.199 3.39899 7.969C3.39899 9.739 4.68899 11.45 4.86899 11.689C5.04899 11.929 7.42899 15.6 11.079 17.179C12.149 17.639 12.899 17.849 13.479 18.029C14.439 18.339 15.309 18.289 15.999 18.189C16.769 18.079 18.369 17.229 18.699 16.299C19.029 15.369 19.029 14.579 18.939 14.429C18.849 14.289 18.629 14.199 18.269 14.019H17.472Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M12.016 0C5.39599 0 0.00799561 5.388 0.00799561 12.008C0.00799561 14.133 0.551996 16.126 1.52099 17.854L0.0389954 23.361L5.672 21.841C7.306 22.766 9.171 23.253 11.101 23.253H11.106C17.726 23.253 23.114 17.865 23.114 11.245C23.114 4.625 17.636 0 11.016 0H12.016ZM11.011 21.295V21.294H11.006C9.33799 21.294 7.71299 20.835 6.30599 19.982L5.97199 19.782L2.47799 20.722L3.41499 17.222L3.19599 16.872C2.26099 15.392 1.76299 13.678 1.76299 11.908C1.76299 6.788 5.91299 2.628 11.033 2.628C16.153 2.628 20.303 6.788 20.303 11.908C20.303 17.028 16.133 21.295 11.011 21.295Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/1234567890" target="_blank">Chat on WhatsApp</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
                                         d="M12 2C8.13401 2 5 5.13401 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13401 15.866 2 12 2Z"
                                         stroke="currentColor" stroke-width="2" />
                                     <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2" />
@@ -498,16 +521,16 @@
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contact-form">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="user_name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="user_email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" placeholder="Phone Number">
+                            <input type="tel" id="phone" name="user_phone" placeholder="Phone Number">
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Tell us about your project"
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"
                                 required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">Send Message</button>

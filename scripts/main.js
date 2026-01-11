@@ -169,11 +169,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Simulate form submission
-            showNotification('Thank you! Your message has been sent successfully.', 'success');
+            // EmailJS Integration
+            const serviceID = 'service_1mkntde';
+            const templateID = 'YOUR_TEMPLATE_ID';
 
-            // Reset form
-            contactForm.reset();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    showNotification('Thank you! Your message has been sent successfully.', 'success');
+                    contactForm.reset();
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                }, (err) => {
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                    showNotification('Failed to send message. Please try again.', 'error');
+                    console.log(JSON.stringify(err));
+                });
         });
     }
 
