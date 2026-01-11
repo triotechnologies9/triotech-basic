@@ -391,6 +391,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // ===================================
     // Console Welcome Message
     // ===================================
-    console.log('%c🚀 Trio Technologies', 'font-size: 24px; font-weight: bold; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;');
+    console.log('%c🚀 Triotech IT Solutions', 'font-size: 24px; font-weight: bold; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;');
     console.log('%cTransforming businesses through innovative IT solutions', 'font-size: 14px; color: #667eea;');
 });
