@@ -1149,22 +1149,28 @@ h1 {
     .about-content,
     .contact-content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .about-image {
+        order: -1;
+        /* Ensure image is on top */
+        margin-bottom: var(--spacing-lg);
     }
 
     .footer-content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 
     .footer-links {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .hero-cta {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
+        flex-direction: row;
+        /* Keep buttons side-by-side on tablet if space permits, or wrap */
+        flex-wrap: wrap;
     }
 }
 
@@ -1174,11 +1180,42 @@ h1 {
     }
 
     .hero {
-        padding-top: 60px;
+        padding-top: 140px;
+        /* Adjusted for mobile navbar */
+        padding-bottom: var(--spacing-xl);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        /* Explicit size for better control */
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
     }
 
     .hero-stats {
-        gap: var(--spacing-md);
+        gap: var(--spacing-lg);
+        flex-direction: column;
+        /* Stack stats vertical on mobile */
+        align-items: center;
+    }
+
+    .stat-item {
+        width: 100%;
+        background: var(--color-bg-card);
+        padding: var(--spacing-sm);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--color-border);
     }
 
     .stat-number {
@@ -1191,12 +1228,35 @@ h1 {
 
     .footer-links {
         grid-template-columns: 1fr;
+        /* Stack footer links on mobile */
+        text-align: center;
+    }
+
+    .footer-column h4 {
+        margin-top: var(--spacing-md);
     }
 
     .footer-bottom {
         flex-direction: column;
         gap: var(--spacing-md);
         text-align: center;
+    }
+
+    .contact-form-wrapper {
+        padding: var(--spacing-lg);
+    }
+
+    .partner-banner {
+        padding: var(--spacing-md) 0;
+    }
+
+    .partner-logo {
+        min-width: 140px;
+        padding: 0 var(--spacing-md);
+    }
+
+    .partner-logo span {
+        font-size: 1.1rem;
     }
 }
 
